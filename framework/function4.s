@@ -9,7 +9,7 @@ nttlevel4:                              // @nttlevel4
   .cfi_def_cfa_offset 0
   //In the comments: U = operation with upper half of array
   //                 L = operation with lower half of array
-  
+
 .init:
   ldrsw  x5, [x1]                   //x5 = x1 = k out of RAM
   ptrue  p0.s                       //set the elements of P0 to true
@@ -21,7 +21,7 @@ nttlevel4:                              // @nttlevel4
   mov  z4.h, w10                    //z4 = w10 = 7681 = KYBER_Q
   adrp x10, zetas                   //x10 = zetas address
   add  x15, x10, :lo12:zetas        //x10 = zetas group relocation
-  mov  w9, #16                      //w9 = 32 = start=j+level_shift
+  mov  w9, #16                      //w9 = 16
   mov  w10, #30724                  //w10 = 30724 = 4*KYBER_Q
   mov  z3.h, w10                    //z3 = w10 = 30724 = 4*KYBER_Q
   mov  w16, #8                      //.loops condition

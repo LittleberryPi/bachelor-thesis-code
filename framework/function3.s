@@ -21,7 +21,7 @@ nttlevel3:                              // @nttlevel3
   mov  z4.h, w10                    //z4 = w10 = 7681 = KYBER_Q
   adrp x10, zetas                   //x10 = zetas address
   add  x15, x10, :lo12:zetas        //x10 = zetas group relocation
-  mov  w9, #8                       //w9 = 32 = start=j+level_shift
+  mov  w9, #8                       //w9 = 8
   mov  w10, #30724                  //w10 = 30724 = 4*KYBER_Q
   mov  z3.h, w10                    //z3 = w10 = 30724 = 4*KYBER_Q
   mov  w16, #16                     //.loops condition
