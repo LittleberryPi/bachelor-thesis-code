@@ -100,7 +100,7 @@ nttlevel5:                              // @nttlevel5
   mul     z10.h, p1/m, z10.h, z4.h    //z10 = u2 = u2 * KYBER_Q
   sub     z10.h, z6.h, z10.h          //z10 = barrett_param2 - u2 p_low
 
-  //Return array p in the old format
+  //Return array p to the old format
   uunpklo z5.s, z10.h
   uunpkhi z6.s, z10.h
   uunpklo z7.s, z8.h
