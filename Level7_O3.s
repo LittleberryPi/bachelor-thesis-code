@@ -30,7 +30,7 @@ nttlevel7:                              // @nttlevel7
   whilelo    p1.h, xzr, x9                 //while 0 < x9, proceed
   mov    z4.s, w10                         //z4 = w10 = #0xffffe1ff = -KYBER_Q
   orr    x10, xzr, #0x80                   //x10 = 128 (half size(p))
-.LBB0_1:                             
+.LBB0_1:
   add    x11, x0, x8, lsl #1               //x11 = address of p[127]
   ld1h    {z5.h}, p1/z, [x11, x10, lsl #1]//z5 = x11 + address x10 * 2 = p
   uunpklo    z6.s, z5.h              //z6 = lower half of z5 (p), padded with 0's
@@ -81,7 +81,7 @@ nttlevel7:                              // @nttlevel7
   st1h    {z5.h}, p1, [x0, x8, lsl #1]     //store barrett_param2 in p
   inch    x8                  //increment x8 with Vector length
   whilelo    p1.h, x8, x9                  //while x8 < x9, proceed
-  b.mi    .LBB0_1                          //if x8 < x9, go back at loop
+  b.mi    .LBB0_1                          //if x8 < x9, go back to loop
   // BB#2:
   ret
   .Lfunc_end0:

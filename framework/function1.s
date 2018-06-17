@@ -75,13 +75,13 @@ nttlevel1:                              // @nttlevel1
 
     inch x8                           //increment x8 with vector length
     whilelo  p1.h, x8, x9             //while x8 < x9, proceed
-    b.mi  .loop                       //if x8 < x9, go back at loop
+    b.mi  .loop                       //if x8 < x9, go back to loop
 
   add x10, x10, #4
   add x12, x12, #4
   add x14, x14, #1
   whilelo  p2.h, x14, x16             //while x8 < x9, proceed
-  b.mi  .loops                        //if x8 < x9, go back at loop
+  b.mi  .loops                        //if x8 < x9, go back to loop
 
   str  w5, [x1]                       //x1 = w5 = zeta_counter to RAM
   ret

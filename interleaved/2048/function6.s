@@ -90,6 +90,6 @@ nttlevel6:                              // @nttlevel6
   add     x15, x15, #2                //to load in next part of zetas
   add     x16, x16, #2
   whilelo p1.h, x8, x9                //while x8 < x9, proceed
-  b.mi    .loop                       //if x8 < x9, go back at loop
+  b.mi    .loop                       //if x8 < x9, go back to loop
   ret
   .cfi_endproc

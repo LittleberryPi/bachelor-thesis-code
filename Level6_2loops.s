@@ -66,7 +66,7 @@ nttlevel6:                              // @nttlevel6
 
   inch x8                           //increment x8 with Vector length
   whilelo  p1.h, x8, x9             //while x8 < x9, proceed
-  b.mi  .loop1                      //if x8 < x9, go back at loop
+  b.mi  .loop1                      //if x8 < x9, go back to loop
 
 //Prepare for the second loop
 add  x15, x15, w5, lsl #1           //x10 = zetas[zeta_counter]
@@ -77,7 +77,7 @@ mov  x10, #192                      //x10 = 192 (3/4 size(p))
 mov x12, #128                       //x12 = 128 (2/4 size(p))
 whilelo  p1.h, xzr, x9              //while 0 < x9, proceed
 
-.loop2:                             
+.loop2:
   add  x11, x0, x8, lsl #1          //x11 = begin address of p for iteration
   ld1h  {z5.h}, p1/z, [x11, x10, lsl #1]  //z5 = x11 + address x10 * 2 = p_high
   uunpklo  z6.s, z5.h               //z6 = lower half of z5 (p), padded with 0's
@@ -114,7 +114,7 @@ whilelo  p1.h, xzr, x9              //while 0 < x9, proceed
 
   inch x8                           //increment x8 with Vector length
   whilelo  p1.h, x8, x9             //while x8 < x9, proceed
-  b.mi  .loop2                      //if x8 < x9, go back at loop
+  b.mi  .loop2                      //if x8 < x9, go back to loop
 // BB#2:
   str  w5, [x1]                     //x1 = w5 = zeta_counter to RAM
   ret

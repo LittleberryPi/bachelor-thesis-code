@@ -88,6 +88,6 @@ nttlevel3:                              // @nttlevel3
   inch    x8
   add     x14, x14, #8
   whilelo p1.h, x8, x9                //while x8 < x9, proceed
-  b.mi    .loop                       //if x8 < x9, go back at loop
+  b.mi    .loop                       //if x8 < x9, go back to loop
   ret
   .cfi_endproc
